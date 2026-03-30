@@ -510,6 +510,7 @@ method in UI
 ```lua
 local player = y3.player.get_by_id(1)
 local ui = y3.ui.get_ui(player, "ui_path")
+local texture = 1
 
 local result = ui:set_image("img")
 ```
@@ -2416,6 +2417,7 @@ method in UI
 ```lua
 local player = y3.player.get_by_id(1)
 local ui = y3.ui.get_ui(player, "ui_path")
+local ui_attr = "文本"
 
 local result = ui:bind_global_variable("uiAttr", "globalVar", 1)
 ```

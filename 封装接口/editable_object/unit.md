@@ -931,8 +931,9 @@ method in Unit
 
 ```lua
 local unit = y3.player.get_by_id(1):get_all_units()[1]
+local slot_type = y3.const.SlotType['NOT_IN_BAG']
 
-local result = unit:get_item_by_slot("type", 1)
+local result = unit:get_item_by_slot(slot_type, 1)
 ```
 
 ---
@@ -1021,7 +1022,7 @@ method in Unit
 
 ```lua
 local point = y3.point(0, 0)
-local owner = y3.player.get_by_id(1)
+local player = y3.player.get_by_id(1)
 local unit_key = 134274569
 
 local result = y3.unit.create_unit(owner, unit_key, point, 1.0)
@@ -1373,7 +1374,7 @@ method in Unit
 ```lua
 local unit = y3.player.get_by_id(1):get_all_units()[1]
 
-unit:add_state("state_enum")
+unit:add_state(1)
 ```
 
 ---
@@ -1401,7 +1402,7 @@ method in Unit
 ```lua
 local unit = y3.player.get_by_id(1):get_all_units()[1]
 
-unit:remove_state("state_enum")
+unit:remove_state(1)
 ```
 
 ---
@@ -1487,7 +1488,7 @@ method in Unit
 ```lua
 local unit = y3.player.get_by_id(1):get_all_units()[1]
 
-local result = unit:has_state("state_enum")
+local result = unit:has_state(1)
 ```
 
 ---
@@ -1517,7 +1518,7 @@ method in Unit
 ```lua
 local unit = y3.player.get_by_id(1):get_all_units()[1]
 
-local result = unit:add_state_gc("state_enum")
+local result = unit:add_state_gc(1)
 ```
 
 ---
@@ -3025,7 +3026,7 @@ method in Unit
 ```lua
 local unit = y3.player.get_by_id(1):get_all_units()[1]
 
-unit:set_blood_bar_type("bar_type")
+unit:set_blood_bar_type(1)
 ```
 
 ---
@@ -6179,7 +6180,7 @@ method in Unit
 ```lua
 local unit = y3.player.get_by_id(1):get_all_units()[1]
 
-local result = unit:is_in_radius("other", 1.0)
+local result = unit:is_in_radius(unit, 1.0)
 ```
 
 ---
@@ -6695,7 +6696,7 @@ method in Unit
 ```lua
 local unit = y3.player.get_by_id(1):get_all_units()[1]
 
-local result = unit:has_move_collision("collision_layer")
+local result = unit:has_move_collision(1)
 ```
 
 ---
@@ -6724,7 +6725,7 @@ method in Unit
 ```lua
 local unit = y3.player.get_by_id(1):get_all_units()[1]
 
-unit:set_move_collision("collision_layer", true)
+unit:set_move_collision(1, true)
 ```
 
 ---

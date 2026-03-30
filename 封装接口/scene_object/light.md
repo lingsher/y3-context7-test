@@ -260,7 +260,7 @@ method in Light
 ```lua
 local point = y3.point(0, 0)
 
-local result = y3.light.create_spot_light_to_point(point, 1.0, y3.player.get_by_id(1):get_all_units()[1], 1.0)
+local result = y3.light.create_spot_light_to_point(point, 1.0, unit, 1.0)
 ```
 
 ---

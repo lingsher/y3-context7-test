@@ -561,7 +561,7 @@ method in Player
 
 ```lua
 local player = y3.player.get_by_id(1)
-local unit_or_group = y3.player.get_by_id(1):get_all_units()[1]
+local unit = y3.player.get_by_id(1):get_all_units()[1]
 
 player:select_unit(unit_or_group)
 ```

@@ -78,7 +78,7 @@ method in Point
 - 示例
 
 ```lua
-local result = y3.point.get_by_handle(py_point)
+local result = y3.point.get_by_handle("py_point")
 ```
 
 ---

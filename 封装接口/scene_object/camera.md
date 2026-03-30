@@ -126,7 +126,7 @@ method in Camera
 ```lua
 local camera = y3.camera.create_camera(y3.point(0, 0), 1000, 500, 0, 45, 3000)
 
-camera:apply("player_or_group", 1.0)
+camera:apply(player, 1.0)
 ```
 
 ---
@@ -970,7 +970,7 @@ method in Camera
 - 示例
 
 ```lua
-local result = y3.camera.get_attr_integer('focus_x')
+local result = y3.camera.get_attr_integer()
 ```
 
 ---

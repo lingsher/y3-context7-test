@@ -94,8 +94,9 @@ method in Selector
 
 ```lua
 local selector = y3.selector.create()
+local point = y3.point(0, 0)
 
-local result = selector:in_range("cent", 1.0)
+local result = selector:in_range(point, 1.0)
 ```
 
 ---
@@ -186,8 +187,9 @@ method in Selector
 
 ```lua
 local selector = y3.selector.create()
+local player = y3.player.get_by_id(1)
 
-local result = selector:of_player("p")
+local result = selector:of_player(player)
 ```
 
 ---
@@ -401,7 +403,7 @@ method in Selector
 ```lua
 local selector = y3.selector.create()
 
-local result = selector:in_state("state")
+local result = selector:in_state(1)
 ```
 
 ---
@@ -431,7 +433,7 @@ method in Selector
 ```lua
 local selector = y3.selector.create()
 
-local result = selector:not_in_state("state")
+local result = selector:not_in_state(1)
 ```
 
 ---

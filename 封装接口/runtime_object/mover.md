@@ -127,7 +127,7 @@ method in Mover
 - 示例
 
 ```lua
-local mover_unit = y3.player.get_by_id(1):get_all_units()[1]
+local unit = y3.player.get_by_id(1):get_all_units()[1]
 local mover_data = { angle = 0, distance = 500, speed = 300 }
 
 local result = y3.mover.mover_line(mover_unit, mover_data)
@@ -159,7 +159,7 @@ method in Mover
 - 示例
 
 ```lua
-local mover_unit = y3.player.get_by_id(1):get_all_units()[1]
+local unit = y3.player.get_by_id(1):get_all_units()[1]
 local target_unit = y3.player.get_by_id(1):get_all_units()[1]
 local mover_data = { target = target_unit, speed = 300, target_distance = 50 }
 
@@ -192,7 +192,7 @@ method in Mover
 - 示例
 
 ```lua
-local mover_unit = y3.player.get_by_id(1):get_all_units()[1]
+local unit = y3.player.get_by_id(1):get_all_units()[1]
 local mover_data = { angle = 0, distance = 500, speed = 300, path = { y3.point(100, 100) } }
 
 local result = y3.mover.mover_curve(mover_unit, mover_data)
@@ -224,7 +224,7 @@ method in Mover
 - 示例
 
 ```lua
-local mover_unit = y3.player.get_by_id(1):get_all_units()[1]
+local unit = y3.player.get_by_id(1):get_all_units()[1]
 local mover_data = { angle = 0, radius = 300, speed = 300, clock_wise = true }
 
 local result = y3.mover.mover_round(mover_unit, mover_data)
