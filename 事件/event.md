@@ -11,222 +11,222 @@ Y3 编辑器事件系统，用于注册和处理游戏中的各种事件。
 
 | 事件 | 描述 | 所属对象 |
 | --- | --- | --- |
-| [游戏-初始化](#游戏-初始化) | 游戏初始化时触发。 | Game |
-| [游戏-追帧完成](#游戏-追帧完成) | 游戏-追帧完成 | Game |
-| [游戏-逻辑不同步](#游戏-逻辑不同步) | 游戏-逻辑不同步 | Game |
-| [游戏-地形预设加载完成](#游戏-地形预设加载完成) | 游戏-地形预设加载完成 | Game |
-| [游戏-结束](#游戏-结束) | 游戏结束时触发 | Game |
-| [游戏-暂停](#游戏-暂停) | 游戏暂停时触发 | Game |
-| [游戏-恢复](#游戏-恢复) | 游戏恢复时触发 | Game |
-| [游戏-昼夜变化](#游戏-昼夜变化) | 通过参数判断进入白天还是进入夜晚 | Game |
-| [区域-进入](#区域-进入) | 任意单位进入区域时触发 | Area |
-| [区域-离开](#区域-离开) | 任意单位离开区域时触发 | Area |
-| [游戏-http返回](#游戏-http返回) | 游戏-http返回 | Game |
-| [游戏-接收广播信息](#游戏-接收广播信息) | 游戏-接收广播信息 | Game |
-| [玩家-加入游戏](#玩家-加入游戏) | 玩家加入游戏时触发 | Player |
-| [玩家-离开游戏](#玩家-离开游戏) | 玩家离开游戏时触发 | Player |
-| [玩家-掉线](#玩家-掉线) | 玩家掉线时触发 | Player |
-| [玩家-使用平台道具](#玩家-使用平台道具) | 玩家使用平台道具时触发 | Player |
-| [玩家-持有平台道具](#玩家-持有平台道具) | 玩家进入游戏时如果持有指定平台道具会触发 | Player |
-| [玩家-属性变化](#玩家-属性变化) | 玩家属性变化时触发 | Player |
-| [玩家-发送指定消息](#玩家-发送指定消息) | 玩家发送指定消息时触发 | Game / Player |
-| [玩家-科技提升](#玩家-科技提升) | 玩家科技每提升一级都会触发一次 | Player |
-| [玩家-科技降低](#玩家-科技降低) | 玩家科技每降低一级都会触发一次 | Player |
-| [玩家-科技变化](#玩家-科技变化) | 玩家科技变化时触发，一次变化多个等级也只会触发一次 | Player |
-| [单位-研发科技](#单位-研发科技) | 单位研发科技时触发 | Unit |
-| [单位-获得科技](#单位-获得科技) | 单位获得科技时触发 | Unit |
-| [单位-失去科技](#单位-失去科技) | 单位失去科技时触发 | Unit |
-| [玩家-关系变化](#玩家-关系变化) | 玩家之间的关系改变时触发 | Player |
-| [玩家-重连](#玩家-重连) | 玩家重连时触发 | Player |
-| [单位-建筑升级开始](#单位-建筑升级开始) | 单位-建筑升级开始 | Unit |
-| [单位-建筑升级取消](#单位-建筑升级取消) | 单位-建筑升级取消 | Unit |
-| [单位-建筑升级完成](#单位-建筑升级完成) | 单位-建筑升级完成 | Unit |
-| [单位-建造开始](#单位-建造开始) | 单位-建造开始 | Unit |
-| [单位-建造取消](#单位-建造取消) | 单位-建造取消 | Unit |
-| [单位-建造完成](#单位-建造完成) | 单位-建造完成 | Unit |
-| [技能-建造完成](#技能-建造完成) | 通过建造类技能建造完成时触发，可以获取到被建造出来的单位 | Ability |
-| [技能-学习](#技能-学习) | 学习技能后触发 | Ability |
-| [技能-可用状态变化](#技能-可用状态变化) | 技能-可用状态变化 | Ability |
-| [技能-沉默状态变化](#技能-沉默状态变化) | 技能-沉默状态变化 | Ability |
-| [技能-图标变化](#技能-图标变化) | 技能-图标变化 | Game |
-| [单位-名称变化](#单位-名称变化) | 单位-名称变化 | Unit |
-| [单位-小地图图标变化](#单位-小地图图标变化) | 单位-小地图图标变化 | Unit |
-| [单位-头像变化](#单位-头像变化) | 单位-头像变化 | Unit |
-| [单位-移除](#单位-移除) | 单位被移除后触发 | Unit |
-| [单位-移除后](#单位-移除后) | 单位-移除后 | Unit |
-| [单位-传送结束](#单位-传送结束) | 单位-传送结束 | Unit |
-| [单位-属性变化](#单位-属性变化) | 指定单位的指定属性变化后触发 | Unit |
-| [单位-即将死亡](#单位-即将死亡) | 单位死亡前触发 | Unit |
-| [单位-死亡](#单位-死亡) | 单位死亡后触发 | Unit |
-| [单位-受到伤害前](#单位-受到伤害前) | 在其他计算前触发，可以修改闪避 | Unit |
-| [单位-造成伤害前](#单位-造成伤害前) | 在其他计算前触发，可以修改闪避 | Unit |
-| [单位-受到伤害时](#单位-受到伤害时) | 可以修改伤害值 | Unit |
-| [单位-造成伤害时](#单位-造成伤害时) | 可以修改伤害值 | Unit |
-| [单位-造成伤害后](#单位-造成伤害后) | 伤害已结算，只能获取伤害值 | Unit |
-| [单位-受到伤害后](#单位-受到伤害后) | 伤害已结算，只能获取伤害值 | Unit |
-| [单位-受到治疗前](#单位-受到治疗前) | 可在其他计算前触发，可以修改有效性 | Unit |
-| [单位-受到治疗后](#单位-受到治疗后) | 治疗已结算，只能获取治疗值 | Unit |
-| [单位-受到治疗时](#单位-受到治疗时) | 可以修改治疗值 | Unit |
-| [玩家-属性图标变化](#玩家-属性图标变化) | 玩家-属性图标变化 | Game |
-| [单位-施放技能](#单位-施放技能) | 单位施放技能时触发 | Unit |
-| [单位-获得经验前](#单位-获得经验前) | 单位获得经验前触发 | Unit |
-| [单位-获得经验后](#单位-获得经验后) | 单位获得经验后触发 | Unit |
-| [单位-接收命令](#单位-接收命令) | 接收到命令时触发，如果命令有目标会根据目标类型存到不同的字段里 | Unit |
-| [单位-击杀](#单位-击杀) | 单位击杀其他单位时触发 | Unit |
-| [单位-创建](#单位-创建) | 单位被创建后触发 | Unit |
-| [单位-进入战斗](#单位-进入战斗) | 单位进入战斗时触发 | Unit |
-| [单位-脱离战斗](#单位-脱离战斗) | 单位离开战斗时触发 | Unit |
-| [单位-即将拾取物品](#单位-即将拾取物品) | 单位-即将拾取物品 | Unit |
-| [单位-切换默认行为](#单位-切换默认行为) | 单位-切换默认行为 | Unit |
-| [单位-即将索敌](#单位-即将索敌) | 单位-即将索敌 | Unit |
-| [单位-发现目标](#单位-发现目标) | 单位-发现目标 | Unit |
-| [本地-骨骼碰撞](#本地-骨骼碰撞) | 骨骼碰撞时触发 | Game |
-| [物理-骨骼碰撞](#物理-骨骼碰撞) | 骨骼碰撞时触发 | Game |
-| [单位-购买物品](#单位-购买物品) | 购买物品时触发 | Unit |
-| [单位-购买单位](#单位-购买单位) | 购买单位时触发 | Unit |
-| [单位-出售物品](#单位-出售物品) | 出售物品时触发 | Unit |
-| [商店-商品变化](#商店-商品变化) | 商店-商品变化 | Game |
-| [商店-库存变化](#商店-库存变化) | 商店-库存变化 | Game |
-| [商店-售价变化](#商店-售价变化) | 商店-售价变化 | Game |
-| [单位-物品合成](#单位-物品合成) | 物品合成时触发 | Unit |
-| [单位-购买物品合成](#单位-购买物品合成) | 购买物品合成时触发 | Unit |
-| [单位-复活](#单位-复活) | 单位复活后触发 | Unit |
-| [单位-升级](#单位-升级) | 单位升级后触发 | Unit |
-| [单位-进入草丛](#单位-进入草丛) | 单位进入草丛时触发 | Unit |
-| [单位-离开草丛](#单位-离开草丛) | 单位离开草丛时触发 | Unit |
-| [单位-改变所属](#单位-改变所属) | 单位的所有者玩家发生变化时触发 | Unit |
-| [单位类型-前置条件成立](#单位类型-前置条件成立) | 前置条件由不成立变为成立时触发 | Game |
-| [单位类型-前置条件不成立](#单位类型-前置条件不成立) | 前置条件由成立变为不成立时触发 | Game |
-| [物品类型-前置条件成立](#物品类型-前置条件成立) | 前置条件由不成立变为成立时触发 | Game |
-| [物品类型-前置条件不成立](#物品类型-前置条件不成立) | 前置条件由成立变为不成立时触发 | Game |
-| [技能类型-前置条件成立](#技能类型-前置条件成立) | 前置条件由不成立变为成立时触发 | Game |
-| [技能类型-前置条件不成立](#技能类型-前置条件不成立) | 前置条件由成立变为不成立时触发 | Game |
-| [科技类型-前置条件成立](#科技类型-前置条件成立) | 前置条件由不成立变为成立时触发 | Game |
-| [科技类型-前置条件不成立](#科技类型-前置条件不成立) | 前置条件由成立变为不成立时触发 | Game |
-| [技能-升级](#技能-升级) | 技能升级后触发 | Ability |
-| [施法-即将开始](#施法-即将开始) | 即将施法时触发 | Ability |
-| [施法-开始](#施法-开始) | 施法开始后，前摇开始前触发 | Ability |
-| [施法-引导](#施法-引导) | 前摇完成后，持续引导前触发 | Ability |
-| [施法-出手](#施法-出手) | 持续引导后，后摇开始前触发 | Ability |
-| [施法-完成](#施法-完成) | 后摇结束后触发。只有施法正常完成才会触发。 | Ability |
-| [施法-结束](#施法-结束) | 整个施法的表现结束后触发 | Ability |
-| [施法-打断开始](#施法-打断开始) | 在“开始”到“引导”之间被打断 | Ability |
-| [施法-打断引导](#施法-打断引导) | 在“引导”到“出手”之间被打断 | Ability |
-| [施法-打断出手](#施法-打断出手) | 在“出手”到“完成”之间被打断 | Ability |
-| [施法-停止](#施法-停止) | 施法停止后触发，是施法流程的最后一个事件。 | Ability |
-| [技能-获得](#技能-获得) | 获得技能后触发 | Ability |
-| [技能-失去](#技能-失去) | 失去技能后触发 | Ability |
-| [技能-交换](#技能-交换) | 技能交换后触发 | Ability |
-| [技能-禁用](#技能-禁用) | 技能-禁用 | Ability |
-| [技能-启用](#技能-启用) | 技能-启用 | Ability |
-| [技能-冷却结束](#技能-冷却结束) | 技能冷却结束后触发 | Ability |
-| [技能-自定义动画轴](#技能-自定义动画轴) | 技能-自定义动画轴 | Ability |
-| [效果-获得](#效果-获得) | 获得魔法效果后触发 | Buff |
-| [效果-失去](#效果-失去) | 失去魔法效果后触发 | Buff |
-| [效果-心跳](#效果-心跳) | 魔法效果的周期性触发 | Buff |
-| [效果-叠加](#效果-叠加) | 魔法效果叠加时触发 | Buff |
-| [效果-层数变化](#效果-层数变化) | 魔法效果层数变化时触发 | Buff |
-| [效果-即将获得](#效果-即将获得) | 魔法效果获得前触发 | Buff |
-| [效果-覆盖](#效果-覆盖) | 魔法效果覆盖时触发 | Buff |
-| [可破坏物-创建](#可破坏物-创建) | 可破坏物创建后触发 | Destructible |
-| [可破坏物-死亡](#可破坏物-死亡) | 可破坏物死亡后触发 | Destructible |
-| [可破坏物-复活](#可破坏物-复活) | 可破坏物复活后触发 | Destructible |
-| [可破坏物-资源变化](#可破坏物-资源变化) | 可破坏物存储的资源变化后触发 | Destructible |
-| [可破坏物-采集](#可破坏物-采集) | 可破坏物被采集后触发 | Destructible |
-| [可破坏物-受到伤害](#可破坏物-受到伤害) | 可破坏物受到伤害后触发 | Destructible |
-| [选中-可破坏物](#选中-可破坏物) | 玩家选中可破坏物被后触发 | Player |
-| [本地-选中-可破坏物](#本地-选中-可破坏物) | 本地玩家选中可破坏物被后触发 | Player |
-| [可破坏物-移除](#可破坏物-移除) | 可破坏物被移除后触发 | Destructible |
-| [投射物-创建](#投射物-创建) | 投射物创建后触发 | Projectile |
-| [投射物-死亡](#投射物-死亡) | 投射物死亡后触发 | Projectile |
-| [界面-消息](#界面-消息) | 触发界面上标记的自定义事件后触发 | Game / Player |
-| [玩家-点击小地图](#玩家-点击小地图) | 点击小地图时触发 | Game / Player |
-| [界面-滑动条变化](#界面-滑动条变化) | 滑动条变化时触发 | Game / Player |
-| [界面-聊天框可见性变化](#界面-聊天框可见性变化) | 聊天框可见性变化时触发 | Game / Player |
-| [界面-装备拖拽](#界面-装备拖拽) | 界面-装备拖拽 | Game / Player |
-| [界面-复选框变化](#界面-复选框变化) | 复选框变化时触发 | Game / Player |
-| [界面-视频播放完成](#界面-视频播放完成) | 界面-视频播放完成 | Game / Player |
-| [本地-界面-输入框获取焦点](#本地-界面-输入框获取焦点) | 本地-界面-输入框获取焦点 | Game / Player |
-| [本地-界面-输入框失去焦点](#本地-界面-输入框失去焦点) | 本地-界面-输入框失去焦点 | Game / Player |
-| [本地-界面-输入框内容改变](#本地-界面-输入框内容改变) | 本地-界面-输入框内容改变 | Game / Player |
-| [键盘-按下](#键盘-按下) | 键盘上的某个键按下时触发 | Game / Player |
-| [键盘-抬起](#键盘-抬起) | 键盘上的某个键抬起时触发 | Game / Player |
-| [本地-键盘-按下](#本地-键盘-按下) | 键盘上的某个键按下时触发 | Game / Player |
-| [本地-键盘-抬起](#本地-键盘-抬起) | 键盘上的某个键抬起时触发 | Game / Player |
-| [鼠标-按下](#鼠标-按下) | 鼠标上的某个键按下时触发 | Game / Player |
-| [鼠标-抬起](#鼠标-抬起) | 鼠标上的某个键抬起时触发 | Game / Player |
-| [鼠标-双击](#鼠标-双击) | 鼠标上的某个键双击时触发 | Game / Player |
-| [本地-鼠标-按下](#本地-鼠标-按下) | 鼠标上的某个键按下时触发 | Game / Player |
-| [本地-鼠标-抬起](#本地-鼠标-抬起) | 鼠标上的某个键抬起时触发 | Game / Player |
-| [本地-鼠标-双击](#本地-鼠标-双击) | 鼠标上的某个键双击时触发 | Game / Player |
-| [鼠标-按下单位](#鼠标-按下单位) | 鼠标上的某个键对着单位按下时触发 | Game / Player |
-| [鼠标-抬起单位](#鼠标-抬起单位) | 鼠标上的某个键对着单位抬起时触发 | Game / Player |
-| [鼠标-双击单位](#鼠标-双击单位) | 鼠标上的某个键对着单位双击时触发 | Game / Player |
-| [本地-鼠标-按下单位](#本地-鼠标-按下单位) | 鼠标上的某个键对着单位按下时触发 | Game / Player |
-| [本地-鼠标-抬起单位](#本地-鼠标-抬起单位) | 鼠标上的某个键对着单位抬起时触发 | Game / Player |
-| [本地-鼠标-双击单位](#本地-鼠标-双击单位) | 鼠标上的某个键对着单位双击时触发 | Game / Player |
-| [鼠标-移动](#鼠标-移动) | 鼠标移动时触发 | Game / Player |
-| [本地-鼠标-移动](#本地-鼠标-移动) | 鼠标移动时触发 | Game / Player |
-| [鼠标-滚轮](#鼠标-滚轮) | 鼠标滚轮滚动时触发 | Game / Player |
-| [本地-鼠标-滚轮](#本地-鼠标-滚轮) | 鼠标滚轮滚动时触发 | Game / Player |
-| [选中-单位](#选中-单位) | 玩家选中单位时触发 | Player |
-| [本地-选中-单位](#本地-选中-单位) | 本地玩家选中单位时触发 | Player |
-| [选中-取消](#选中-取消) | 玩家主动取消选中时触发 | Player |
-| [本地-选中-取消](#本地-选中-取消) | 玩家的选中状态被取消时触发 | Player |
-| [选中-失去单位](#选中-失去单位) | 玩家被动失去对单位的选中状态时触发 | Player |
-| [本地-选中-失去单位](#本地-选中-失去单位) | 本地玩家被动失去对单位的选中状态时触发 | Player |
-| [选中-物品](#选中-物品) | 物品被选中时触发 | Player |
-| [本地-选中-物品](#本地-选中-物品) | 本地玩家选中物品时触发 | Player |
-| [玩家-检测到作弊](#玩家-检测到作弊) | 玩家-检测到作弊 | Player |
-| [鼠标-双击物品](#鼠标-双击物品) | 鼠标上左键双击物品时触发 | Game / Player |
-| [鼠标-双击可破坏物](#鼠标-双击可破坏物) | 鼠标上左键双击可破坏物时触发 | Game / Player |
-| [选中-单位组](#选中-单位组) | 玩家选中单位组时触发 | Player |
-| [本地-选中-单位组](#本地-选中-单位组) | 本地玩家选中单位组时触发 | Player |
-| [技能-打开指示器](#技能-打开指示器) | 技能的瞄准指示器显示时触发 | Ability |
-| [技能-建造技能释放前](#技能-建造技能释放前) | 建造技能的命令将要发布时 | Ability |
-| [技能-关闭指示器](#技能-关闭指示器) | 技能的瞄准指示器消失时触发 | Ability |
-| [物品-获得](#物品-获得) | 单位获得物品时触发 | Item |
-| [物品-进入物品栏](#物品-进入物品栏) | 物品进入单位的物品栏时触发 | Item |
-| [物品-进入背包](#物品-进入背包) | 物品进入单位的背包时触发 | Item |
-| [物品-失去](#物品-失去) | 单位失去物品时触发 | Item |
-| [物品-离开物品栏](#物品-离开物品栏) | 物品离开单位的物品栏时触发 | Item |
-| [物品-离开背包](#物品-离开背包) | 物品离开单位的背包时触发 | Item |
-| [物品-使用](#物品-使用) | 单位使用物品时触发 | Item |
-| [单位-寻路开始](#单位-寻路开始) | 攻击、移动、施法等行为均可能导致寻路 | Unit |
-| [单位-寻路结束](#单位-寻路结束) | 寻路到达目标位置或失败3次后触发 | Unit |
-| [物品-堆叠变化](#物品-堆叠变化) | 物品堆叠数变化时触发 | Item |
-| [物品-充能变化](#物品-充能变化) | 物品充能层数变化时触发 | Item |
-| [物品-创建](#物品-创建) | 物品创建时触发 | Item |
-| [物品-移除](#物品-移除) | 物品移除时触发 | Item |
-| [物品-出售](#物品-出售) | 将物品出售给商店时触发 | Item |
-| [物品-死亡](#物品-死亡) | 物品被破坏时触发 | Item |
-| [物品-采集创建](#物品-采集创建) | 物品通过采集被创建时会触发该事件。采集功能来自可破坏物。 | Item |
-| [命令-攻击移动](#命令-攻击移动) | 命令-攻击移动 | Unit |
-| [命令-出售物品](#命令-出售物品) | 命令-出售物品 | Unit |
-| [命令-施放技能](#命令-施放技能) | 命令-施放技能 | Unit |
-| [命令-巡逻](#命令-巡逻) | 命令-巡逻 | Unit |
-| [命令-移动](#命令-移动) | 命令-移动 | Unit |
-| [鼠标-悬停](#鼠标-悬停) | 悬停进入或离开都会触发 | Game / Player |
-| [本地-鼠标-悬停](#本地-鼠标-悬停) | 悬停进入或离开都会触发 | Game / Player |
-| [玩家-发送消息](#玩家-发送消息) | 玩家发送任意消息时触发 | Game / Player |
-| [游戏-消息](#游戏-消息) | 在事件管理处定义的事件通过这个方法进行触发 | Game |
-| [玩家-语音发言](#玩家-语音发言) | 玩家开始语音和结束语音都会触发 | Game / Player |
-| [玩家-平台道具变化](#玩家-平台道具变化) | 玩家平台道具变化时触发 | Player |
-| [玩家-平台商城窗口变化](#玩家-平台商城窗口变化) | 平台商城窗口变化事件 | Game / Player |
-| [控制台-输入](#控制台-输入) | 控制台-输入 | Game |
-| [控制台-请求补全](#控制台-请求补全) | 控制台-请求补全 | Game |
-| [steam-收到好友申请](#steam-收到好友申请) | steam-收到好友申请 | Game |
-| [steam-收到被好友删除](#steam-收到被好友删除) | steam-收到被好友删除 | Game |
-| [steam-好友在线状态变化](#steam-好友在线状态变化) | steam-好友在线状态变化 | Game |
-| [steam-本地玩家队伍变化](#steam-本地玩家队伍变化) | steam-本地玩家队伍变化 | Game |
-| [steam-收到队伍邀请](#steam-收到队伍邀请) | steam-收到队伍邀请 | Game |
-| [steam-进入大厅](#steam-进入大厅) | steam-进入大厅 | Game |
-| [steam-开始匹配](#steam-开始匹配) | steam-开始匹配 | Game |
-| [steam-取消匹配](#steam-取消匹配) | steam-取消匹配 | Game |
-| [steam-本地房间信息变化](#steam-本地房间信息变化) | steam-本地房间信息变化 | Game |
-| [steam-被邀请加入房间](#steam-被邀请加入房间) | steam-被邀请加入房间 | Game |
-| [steam-被踢出房间](#steam-被踢出房间) | steam-被踢出房间 | Game |
-| [steam-创建房间成功](#steam-创建房间成功) | steam-创建房间成功 | Game |
+| [游戏-初始化](#游戏-初始化) | 游戏初始化时触发。| Game |
+| [游戏-追帧完成](#游戏-追帧完成) | 游戏-追帧完成| Game |
+| [游戏-逻辑不同步](#游戏-逻辑不同步) | 游戏-逻辑不同步| Game |
+| [游戏-地形预设加载完成](#游戏-地形预设加载完成) | 游戏-地形预设加载完成| Game |
+| [游戏-结束](#游戏-结束) | 游戏结束时触发| Game |
+| [游戏-暂停](#游戏-暂停) | 游戏暂停时触发| Game |
+| [游戏-恢复](#游戏-恢复) | 游戏恢复时触发| Game |
+| [游戏-昼夜变化](#游戏-昼夜变化) | 通过参数判断进入白天还是进入夜晚| Game |
+| [区域-进入](#区域-进入) | 任意单位进入区域时触发| Game / Area |
+| [区域-离开](#区域-离开) | 任意单位离开区域时触发| Game / Area |
+| [游戏-http返回](#游戏-http返回) | 游戏-http返回| Game |
+| [游戏-接收广播信息](#游戏-接收广播信息) | 游戏-接收广播信息| Game |
+| [玩家-加入游戏](#玩家-加入游戏) | 玩家加入游戏时触发| Game / Player |
+| [玩家-离开游戏](#玩家-离开游戏) | 玩家离开游戏时触发| Game / Player |
+| [玩家-掉线](#玩家-掉线) | 玩家掉线时触发| Game / Player |
+| [玩家-使用平台道具](#玩家-使用平台道具) | 玩家使用平台道具时触发| Game / Player |
+| [玩家-持有平台道具](#玩家-持有平台道具) | 玩家进入游戏时如果持有指定平台道具会触发| Game / Player |
+| [玩家-属性变化](#玩家-属性变化) | 玩家属性变化时触发| Game / Player |
+| [玩家-发送指定消息](#玩家-发送指定消息) | 玩家发送指定消息时触发| Game / Player |
+| [玩家-科技提升](#玩家-科技提升) | 玩家科技每提升一级都会触发一次| Game / Player |
+| [玩家-科技降低](#玩家-科技降低) | 玩家科技每降低一级都会触发一次| Game / Player |
+| [玩家-科技变化](#玩家-科技变化) | 玩家科技变化时触发，一次变化多个等级也只会触发一次| Game / Player |
+| [单位-研发科技](#单位-研发科技) | 单位研发科技时触发| Game / Unit |
+| [单位-获得科技](#单位-获得科技) | 单位获得科技时触发| Game / Unit |
+| [单位-失去科技](#单位-失去科技) | 单位失去科技时触发| Game / Unit |
+| [玩家-关系变化](#玩家-关系变化) | 玩家之间的关系改变时触发| Game / Player |
+| [玩家-重连](#玩家-重连) | 玩家重连时触发| Game / Player |
+| [单位-建筑升级开始](#单位-建筑升级开始) | 单位-建筑升级开始| Game / Unit |
+| [单位-建筑升级取消](#单位-建筑升级取消) | 单位-建筑升级取消| Game / Unit |
+| [单位-建筑升级完成](#单位-建筑升级完成) | 单位-建筑升级完成| Game / Unit |
+| [单位-建造开始](#单位-建造开始) | 单位-建造开始| Game / Unit |
+| [单位-建造取消](#单位-建造取消) | 单位-建造取消| Game / Unit |
+| [单位-建造完成](#单位-建造完成) | 单位-建造完成| Game / Unit |
+| [技能-建造完成](#技能-建造完成) | 通过建造类技能建造完成时触发，可以获取到被建造出来的单位| Game / Ability / Unit |
+| [技能-学习](#技能-学习) | 学习技能后触发| Game / Ability / Unit |
+| [技能-可用状态变化](#技能-可用状态变化) | 技能-可用状态变化| Game / Ability / Unit |
+| [技能-沉默状态变化](#技能-沉默状态变化) | 技能-沉默状态变化| Game / Ability / Unit |
+| [技能-图标变化](#技能-图标变化) | 技能-图标变化| Game |
+| [单位-名称变化](#单位-名称变化) | 单位-名称变化| Game / Unit |
+| [单位-小地图图标变化](#单位-小地图图标变化) | 单位-小地图图标变化| Game / Unit |
+| [单位-头像变化](#单位-头像变化) | 单位-头像变化| Game / Unit |
+| [单位-移除](#单位-移除) | 单位被移除后触发| Game / Unit |
+| [单位-移除后](#单位-移除后) | 单位-移除后| Game / Unit |
+| [单位-传送结束](#单位-传送结束) | 单位-传送结束| Game / Unit |
+| [单位-属性变化](#单位-属性变化) | 指定单位的指定属性变化后触发| Game / Unit |
+| [单位-即将死亡](#单位-即将死亡) | 单位死亡前触发| Game / Unit |
+| [单位-死亡](#单位-死亡) | 单位死亡后触发| Game / Unit |
+| [单位-受到伤害前](#单位-受到伤害前) | 在其他计算前触发，可以修改闪避| Game / Unit |
+| [单位-造成伤害前](#单位-造成伤害前) | 在其他计算前触发，可以修改闪避| Game / Unit |
+| [单位-受到伤害时](#单位-受到伤害时) | 可以修改伤害值| Game / Unit |
+| [单位-造成伤害时](#单位-造成伤害时) | 可以修改伤害值| Game / Unit |
+| [单位-造成伤害后](#单位-造成伤害后) | 伤害已结算，只能获取伤害值| Game / Unit |
+| [单位-受到伤害后](#单位-受到伤害后) | 伤害已结算，只能获取伤害值| Game / Unit |
+| [单位-受到治疗前](#单位-受到治疗前) | 可在其他计算前触发，可以修改有效性| Game / Unit |
+| [单位-受到治疗后](#单位-受到治疗后) | 治疗已结算，只能获取治疗值| Game / Unit |
+| [单位-受到治疗时](#单位-受到治疗时) | 可以修改治疗值| Game / Unit |
+| [玩家-属性图标变化](#玩家-属性图标变化) | 玩家-属性图标变化| Game |
+| [单位-施放技能](#单位-施放技能) | 单位施放技能时触发| Game / Unit |
+| [单位-获得经验前](#单位-获得经验前) | 单位获得经验前触发| Game / Unit |
+| [单位-获得经验后](#单位-获得经验后) | 单位获得经验后触发| Game / Unit |
+| [单位-接收命令](#单位-接收命令) | 接收到命令时触发，如果命令有目标会根据目标类型存到不同的字段里| Game / Unit |
+| [单位-击杀](#单位-击杀) | 单位击杀其他单位时触发| Game / Unit |
+| [单位-创建](#单位-创建) | 单位被创建后触发| Game / Unit |
+| [单位-进入战斗](#单位-进入战斗) | 单位进入战斗时触发| Game / Unit |
+| [单位-脱离战斗](#单位-脱离战斗) | 单位离开战斗时触发| Game / Unit |
+| [单位-即将拾取物品](#单位-即将拾取物品) | 单位-即将拾取物品| Game / Unit |
+| [单位-切换默认行为](#单位-切换默认行为) | 单位-切换默认行为| Game / Unit |
+| [单位-即将索敌](#单位-即将索敌) | 单位-即将索敌| Game / Unit |
+| [单位-发现目标](#单位-发现目标) | 单位-发现目标| Game / Unit |
+| [本地-骨骼碰撞](#本地-骨骼碰撞) | 骨骼碰撞时触发| Game |
+| [物理-骨骼碰撞](#物理-骨骼碰撞) | 骨骼碰撞时触发| Game |
+| [单位-购买物品](#单位-购买物品) | 购买物品时触发| Game / Unit |
+| [单位-购买单位](#单位-购买单位) | 购买单位时触发| Game / Unit |
+| [单位-出售物品](#单位-出售物品) | 出售物品时触发| Game / Unit |
+| [商店-商品变化](#商店-商品变化) | 商店-商品变化| Game |
+| [商店-库存变化](#商店-库存变化) | 商店-库存变化| Game |
+| [商店-售价变化](#商店-售价变化) | 商店-售价变化| Game |
+| [单位-物品合成](#单位-物品合成) | 物品合成时触发| Game / Unit |
+| [单位-购买物品合成](#单位-购买物品合成) | 购买物品合成时触发| Game / Unit |
+| [单位-复活](#单位-复活) | 单位复活后触发| Game / Unit |
+| [单位-升级](#单位-升级) | 单位升级后触发| Game / Unit |
+| [单位-进入草丛](#单位-进入草丛) | 单位进入草丛时触发| Game / Unit |
+| [单位-离开草丛](#单位-离开草丛) | 单位离开草丛时触发| Game / Unit |
+| [单位-改变所属](#单位-改变所属) | 单位的所有者玩家发生变化时触发| Game / Unit |
+| [单位类型-前置条件成立](#单位类型-前置条件成立) | 前置条件由不成立变为成立时触发| Game |
+| [单位类型-前置条件不成立](#单位类型-前置条件不成立) | 前置条件由成立变为不成立时触发| Game |
+| [物品类型-前置条件成立](#物品类型-前置条件成立) | 前置条件由不成立变为成立时触发| Game |
+| [物品类型-前置条件不成立](#物品类型-前置条件不成立) | 前置条件由成立变为不成立时触发| Game |
+| [技能类型-前置条件成立](#技能类型-前置条件成立) | 前置条件由不成立变为成立时触发| Game / Unit |
+| [技能类型-前置条件不成立](#技能类型-前置条件不成立) | 前置条件由成立变为不成立时触发| Game / Unit |
+| [科技类型-前置条件成立](#科技类型-前置条件成立) | 前置条件由不成立变为成立时触发| Game / Unit |
+| [科技类型-前置条件不成立](#科技类型-前置条件不成立) | 前置条件由成立变为不成立时触发| Game / Unit |
+| [技能-升级](#技能-升级) | 技能升级后触发| Game / Ability / Unit |
+| [施法-即将开始](#施法-即将开始) | 即将施法时触发| Game / Ability / Unit |
+| [施法-开始](#施法-开始) | 施法开始后，前摇开始前触发| Game / Ability / Unit |
+| [施法-引导](#施法-引导) | 前摇完成后，持续引导前触发| Game / Ability / Unit |
+| [施法-出手](#施法-出手) | 持续引导后，后摇开始前触发| Game / Ability / Unit |
+| [施法-完成](#施法-完成) | 后摇结束后触发。只有施法正常完成才会触发。| Game / Ability / Unit |
+| [施法-结束](#施法-结束) | 整个施法的表现结束后触发| Game / Ability / Unit |
+| [施法-打断开始](#施法-打断开始) | 在“开始”到“引导”之间被打断| Game / Ability / Unit |
+| [施法-打断引导](#施法-打断引导) | 在“引导”到“出手”之间被打断| Game / Ability / Unit |
+| [施法-打断出手](#施法-打断出手) | 在“出手”到“完成”之间被打断| Game / Ability / Unit |
+| [施法-停止](#施法-停止) | 施法停止后触发，是施法流程的最后一个事件。| Game / Ability / Unit |
+| [技能-获得](#技能-获得) | 获得技能后触发| Game / Ability / Unit |
+| [技能-失去](#技能-失去) | 失去技能后触发| Game / Ability / Unit |
+| [技能-交换](#技能-交换) | 技能交换后触发| Game / Ability / Unit |
+| [技能-禁用](#技能-禁用) | 技能-禁用| Game / Ability / Unit |
+| [技能-启用](#技能-启用) | 技能-启用| Game / Ability / Unit |
+| [技能-冷却结束](#技能-冷却结束) | 技能冷却结束后触发| Game / Ability / Unit |
+| [技能-自定义动画轴](#技能-自定义动画轴) | 技能-自定义动画轴| Game / Ability / Unit |
+| [效果-获得](#效果-获得) | 获得魔法效果后触发| Game / Buff / Unit |
+| [效果-失去](#效果-失去) | 失去魔法效果后触发| Game / Buff / Unit |
+| [效果-心跳](#效果-心跳) | 魔法效果的周期性触发| Game / Buff / Unit |
+| [效果-叠加](#效果-叠加) | 魔法效果叠加时触发| Game / Buff / Unit |
+| [效果-层数变化](#效果-层数变化) | 魔法效果层数变化时触发| Game / Buff / Unit |
+| [效果-即将获得](#效果-即将获得) | 魔法效果获得前触发| Game / Buff / Unit |
+| [效果-覆盖](#效果-覆盖) | 魔法效果覆盖时触发| Game / Buff / Unit |
+| [可破坏物-创建](#可破坏物-创建) | 可破坏物创建后触发| Game / Destructible |
+| [可破坏物-死亡](#可破坏物-死亡) | 可破坏物死亡后触发| Game / Destructible |
+| [可破坏物-复活](#可破坏物-复活) | 可破坏物复活后触发| Game / Destructible |
+| [可破坏物-资源变化](#可破坏物-资源变化) | 可破坏物存储的资源变化后触发| Game / Destructible |
+| [可破坏物-采集](#可破坏物-采集) | 可破坏物被采集后触发| Game / Destructible |
+| [可破坏物-受到伤害](#可破坏物-受到伤害) | 可破坏物受到伤害后触发| Game / Destructible |
+| [选中-可破坏物](#选中-可破坏物) | 玩家选中可破坏物被后触发| Game / Player |
+| [本地-选中-可破坏物](#本地-选中-可破坏物) | 本地玩家选中可破坏物被后触发| Game / Player |
+| [可破坏物-移除](#可破坏物-移除) | 可破坏物被移除后触发| Game / Destructible |
+| [投射物-创建](#投射物-创建) | 投射物创建后触发| Game / Projectile |
+| [投射物-死亡](#投射物-死亡) | 投射物死亡后触发| Game / Projectile |
+| [界面-消息](#界面-消息) | 触发界面上标记的自定义事件后触发| Game / Player |
+| [玩家-点击小地图](#玩家-点击小地图) | 点击小地图时触发| Game / Player |
+| [界面-滑动条变化](#界面-滑动条变化) | 滑动条变化时触发| Game / Player |
+| [界面-聊天框可见性变化](#界面-聊天框可见性变化) | 聊天框可见性变化时触发| Game / Player |
+| [界面-装备拖拽](#界面-装备拖拽) | 界面-装备拖拽| Game / Player |
+| [界面-复选框变化](#界面-复选框变化) | 复选框变化时触发| Game / Player |
+| [界面-视频播放完成](#界面-视频播放完成) | 界面-视频播放完成| Game / Player |
+| [本地-界面-输入框获取焦点](#本地-界面-输入框获取焦点) | 本地-界面-输入框获取焦点| Game / Player |
+| [本地-界面-输入框失去焦点](#本地-界面-输入框失去焦点) | 本地-界面-输入框失去焦点| Game / Player |
+| [本地-界面-输入框内容改变](#本地-界面-输入框内容改变) | 本地-界面-输入框内容改变| Game / Player |
+| [键盘-按下](#键盘-按下) | 键盘上的某个键按下时触发| Game / Player |
+| [键盘-抬起](#键盘-抬起) | 键盘上的某个键抬起时触发| Game / Player |
+| [本地-键盘-按下](#本地-键盘-按下) | 键盘上的某个键按下时触发| Game / Player |
+| [本地-键盘-抬起](#本地-键盘-抬起) | 键盘上的某个键抬起时触发| Game / Player |
+| [鼠标-按下](#鼠标-按下) | 鼠标上的某个键按下时触发| Game / Player |
+| [鼠标-抬起](#鼠标-抬起) | 鼠标上的某个键抬起时触发| Game / Player |
+| [鼠标-双击](#鼠标-双击) | 鼠标上的某个键双击时触发| Game / Player |
+| [本地-鼠标-按下](#本地-鼠标-按下) | 鼠标上的某个键按下时触发| Game / Player |
+| [本地-鼠标-抬起](#本地-鼠标-抬起) | 鼠标上的某个键抬起时触发| Game / Player |
+| [本地-鼠标-双击](#本地-鼠标-双击) | 鼠标上的某个键双击时触发| Game / Player |
+| [鼠标-按下单位](#鼠标-按下单位) | 鼠标上的某个键对着单位按下时触发| Game / Player |
+| [鼠标-抬起单位](#鼠标-抬起单位) | 鼠标上的某个键对着单位抬起时触发| Game / Player |
+| [鼠标-双击单位](#鼠标-双击单位) | 鼠标上的某个键对着单位双击时触发| Game / Player |
+| [本地-鼠标-按下单位](#本地-鼠标-按下单位) | 鼠标上的某个键对着单位按下时触发| Game / Player |
+| [本地-鼠标-抬起单位](#本地-鼠标-抬起单位) | 鼠标上的某个键对着单位抬起时触发| Game / Player |
+| [本地-鼠标-双击单位](#本地-鼠标-双击单位) | 鼠标上的某个键对着单位双击时触发| Game / Player |
+| [鼠标-移动](#鼠标-移动) | 鼠标移动时触发| Game / Player |
+| [本地-鼠标-移动](#本地-鼠标-移动) | 鼠标移动时触发| Game / Player |
+| [鼠标-滚轮](#鼠标-滚轮) | 鼠标滚轮滚动时触发| Game / Player |
+| [本地-鼠标-滚轮](#本地-鼠标-滚轮) | 鼠标滚轮滚动时触发| Game / Player |
+| [选中-单位](#选中-单位) | 玩家选中单位时触发| Game / Player |
+| [本地-选中-单位](#本地-选中-单位) | 本地玩家选中单位时触发| Game / Player |
+| [选中-取消](#选中-取消) | 玩家主动取消选中时触发| Game / Player |
+| [本地-选中-取消](#本地-选中-取消) | 玩家的选中状态被取消时触发| Game / Player |
+| [选中-失去单位](#选中-失去单位) | 玩家被动失去对单位的选中状态时触发| Game / Player |
+| [本地-选中-失去单位](#本地-选中-失去单位) | 本地玩家被动失去对单位的选中状态时触发| Game / Player |
+| [选中-物品](#选中-物品) | 物品被选中时触发| Game / Player |
+| [本地-选中-物品](#本地-选中-物品) | 本地玩家选中物品时触发| Game / Player |
+| [玩家-检测到作弊](#玩家-检测到作弊) | 玩家-检测到作弊| Game / Player |
+| [鼠标-双击物品](#鼠标-双击物品) | 鼠标上左键双击物品时触发| Game / Player |
+| [鼠标-双击可破坏物](#鼠标-双击可破坏物) | 鼠标上左键双击可破坏物时触发| Game / Player |
+| [选中-单位组](#选中-单位组) | 玩家选中单位组时触发| Game / Player |
+| [本地-选中-单位组](#本地-选中-单位组) | 本地玩家选中单位组时触发| Game / Player |
+| [技能-打开指示器](#技能-打开指示器) | 技能的瞄准指示器显示时触发| Game / Ability / Unit |
+| [技能-建造技能释放前](#技能-建造技能释放前) | 建造技能的命令将要发布时| Game / Ability / Unit |
+| [技能-关闭指示器](#技能-关闭指示器) | 技能的瞄准指示器消失时触发| Game / Ability / Unit |
+| [物品-获得](#物品-获得) | 单位获得物品时触发| Game / Item |
+| [物品-进入物品栏](#物品-进入物品栏) | 物品进入单位的物品栏时触发| Game / Item |
+| [物品-进入背包](#物品-进入背包) | 物品进入单位的背包时触发| Game / Item |
+| [物品-失去](#物品-失去) | 单位失去物品时触发| Game / Item |
+| [物品-离开物品栏](#物品-离开物品栏) | 物品离开单位的物品栏时触发| Game / Item |
+| [物品-离开背包](#物品-离开背包) | 物品离开单位的背包时触发| Game / Item |
+| [物品-使用](#物品-使用) | 单位使用物品时触发| Game / Item |
+| [单位-寻路开始](#单位-寻路开始) | 攻击、移动、施法等行为均可能导致寻路| Game / Unit |
+| [单位-寻路结束](#单位-寻路结束) | 寻路到达目标位置或失败3次后触发| Game / Unit |
+| [物品-堆叠变化](#物品-堆叠变化) | 物品堆叠数变化时触发| Game / Item |
+| [物品-充能变化](#物品-充能变化) | 物品充能层数变化时触发| Game / Item |
+| [物品-创建](#物品-创建) | 物品创建时触发| Game / Item |
+| [物品-移除](#物品-移除) | 物品移除时触发| Game / Item |
+| [物品-出售](#物品-出售) | 将物品出售给商店时触发| Game / Item |
+| [物品-死亡](#物品-死亡) | 物品被破坏时触发| Game / Item |
+| [物品-采集创建](#物品-采集创建) | 物品通过采集被创建时会触发该事件。采集功能来自可破坏物。| Game / Item |
+| [命令-攻击移动](#命令-攻击移动) | 命令-攻击移动| Game / Unit |
+| [命令-出售物品](#命令-出售物品) | 命令-出售物品| Game / Unit |
+| [命令-施放技能](#命令-施放技能) | 命令-施放技能| Game / Unit |
+| [命令-巡逻](#命令-巡逻) | 命令-巡逻| Game / Unit |
+| [命令-移动](#命令-移动) | 命令-移动| Game / Unit |
+| [鼠标-悬停](#鼠标-悬停) | 悬停进入或离开都会触发| Game / Player |
+| [本地-鼠标-悬停](#本地-鼠标-悬停) | 悬停进入或离开都会触发| Game / Player |
+| [玩家-发送消息](#玩家-发送消息) | 玩家发送任意消息时触发| Game / Player |
+| [游戏-消息](#游戏-消息) | 在事件管理处定义的事件通过这个方法进行触发| Game |
+| [玩家-语音发言](#玩家-语音发言) | 玩家开始语音和结束语音都会触发| Game / Player |
+| [玩家-平台道具变化](#玩家-平台道具变化) | 玩家平台道具变化时触发| Game / Player |
+| [玩家-平台商城窗口变化](#玩家-平台商城窗口变化) | 平台商城窗口变化事件| Game / Player |
+| [控制台-输入](#控制台-输入) | 控制台-输入| Game |
+| [控制台-请求补全](#控制台-请求补全) | 控制台-请求补全| Game |
+| [steam-收到好友申请](#steam-收到好友申请) | steam-收到好友申请| Game |
+| [steam-收到被好友删除](#steam-收到被好友删除) | steam-收到被好友删除| Game |
+| [steam-好友在线状态变化](#steam-好友在线状态变化) | steam-好友在线状态变化| Game |
+| [steam-本地玩家队伍变化](#steam-本地玩家队伍变化) | steam-本地玩家队伍变化| Game |
+| [steam-收到队伍邀请](#steam-收到队伍邀请) | steam-收到队伍邀请| Game |
+| [steam-进入大厅](#steam-进入大厅) | steam-进入大厅| Game |
+| [steam-开始匹配](#steam-开始匹配) | steam-开始匹配| Game |
+| [steam-取消匹配](#steam-取消匹配) | steam-取消匹配| Game |
+| [steam-本地房间信息变化](#steam-本地房间信息变化) | steam-本地房间信息变化| Game |
+| [steam-被邀请加入房间](#steam-被邀请加入房间) | steam-被邀请加入房间| Game |
+| [steam-被踢出房间](#steam-被踢出房间) | steam-被踢出房间| Game |
+| [steam-创建房间成功](#steam-创建房间成功) | steam-创建房间成功| Game |
 
 ---
 
@@ -469,9 +469,18 @@ event in Area
 - 示例
 
 ```lua
-local area = y3.area.get_by_id(1)
+-- 方式1: 通过对象注册
+local area = y3.area.get_by_res_id(1)
 
-area:event('区域-进入', area, function(trg, data)
+area:event('区域-进入', function(trg, data)
+    local unit = data.unit  -- 单位
+    local area = data.area  -- 区域
+    local trigger_id = data.trigger_id  -- 触发器ID
+end)
+
+-- 方式2: 通过 y3.game 注册（监听全局事件）
+local area = y3.area.get_by_res_id(1)
+y3.game:event('区域-进入', area, function(trg, data)
     local unit = data.unit  -- 单位
     local area = data.area  -- 区域
     local trigger_id = data.trigger_id  -- 触发器ID
@@ -505,9 +514,18 @@ event in Area
 - 示例
 
 ```lua
-local area = y3.area.get_by_id(1)
+-- 方式1: 通过对象注册
+local area = y3.area.get_by_res_id(1)
 
-area:event('区域-离开', area, function(trg, data)
+area:event('区域-离开', function(trg, data)
+    local unit = data.unit  -- 单位
+    local area = data.area  -- 区域
+    local trigger_id = data.trigger_id  -- 触发器ID
+end)
+
+-- 方式2: 通过 y3.game 注册（监听全局事件）
+local area = y3.area.get_by_res_id(1)
+y3.game:event('区域-离开', area, function(trg, data)
     local unit = data.unit  -- 单位
     local area = data.area  -- 区域
     local trigger_id = data.trigger_id  -- 触发器ID
@@ -4192,10 +4210,12 @@ event in Destructible
 ```lua
 local destructible = y3.destructible.get_by_id(1)
 
-destructible:event('可破坏物-创建', function(trg, data)
-    local destructible = data.destructible  -- 可破坏物
-    local lua_table = data.lua_table  -- 用户自定义配置表
-end)
+if destructible then
+    destructible:event('可破坏物-创建', function(trg, data)
+        local destructible = data.destructible  -- 可破坏物
+        local lua_table = data.lua_table  -- 用户自定义配置表
+    end)
+end 
 ```
 
 ---
@@ -4224,10 +4244,12 @@ event in Destructible
 ```lua
 local destructible = y3.destructible.get_by_id(1)
 
-destructible:event('可破坏物-死亡', function(trg, data)
-    local destructible = data.destructible  -- 可破坏物
-    local unit_id_of_dest_killer = data.unit_id_of_dest_killer  -- 凶手单位ID
-end)
+if destructible then
+    destructible:event('可破坏物-死亡', function(trg, data)
+        local destructible = data.destructible  -- 可破坏物
+        local unit_id_of_dest_killer = data.unit_id_of_dest_killer  -- 凶手单位ID
+    end)
+end 
 ```
 
 ---
@@ -4255,9 +4277,11 @@ event in Destructible
 ```lua
 local destructible = y3.destructible.get_by_id(1)
 
-destructible:event('可破坏物-复活', function(trg, data)
-    local destructible = data.destructible  -- 可破坏物
-end)
+if destructible then
+    destructible:event('可破坏物-复活', function(trg, data)
+        local destructible = data.destructible  -- 可破坏物
+    end)
+end 
 ```
 
 ---
@@ -4286,10 +4310,12 @@ event in Destructible
 ```lua
 local destructible = y3.destructible.get_by_id(1)
 
-destructible:event('可破坏物-资源变化', function(trg, data)
-    local destructible = data.destructible  -- 可破坏物
-    local res_chg_cnt_in_dest_event = data.res_chg_cnt_in_dest_event  -- 可破坏物资源变化量
-end)
+if destructible then
+    destructible:event('可破坏物-资源变化', function(trg, data)
+        local destructible = data.destructible  -- 可破坏物
+        local res_chg_cnt_in_dest_event = data.res_chg_cnt_in_dest_event  -- 可破坏物资源变化量
+    end)
+end 
 ```
 
 ---
@@ -4320,12 +4346,14 @@ event in Destructible
 ```lua
 local destructible = y3.destructible.get_by_id(1)
 
-destructible:event('可破坏物-采集', function(trg, data)
-    local destructible = data.destructible  -- 可破坏物
-    local unit_id_in_dest_event = data.unit_id_in_dest_event  -- 事件中的单位
-    local ability_in_dest_event = data.ability_in_dest_event  -- 事件中的技能对象
-    local player_res_cnt_in_event = data.player_res_cnt_in_event  -- 采集的玩家属性个数
-end)
+if destructible then
+    destructible:event('可破坏物-采集', function(trg, data)
+        local destructible = data.destructible  -- 可破坏物
+        local unit_id_in_dest_event = data.unit_id_in_dest_event  -- 事件中的单位
+        local ability_in_dest_event = data.ability_in_dest_event  -- 事件中的技能对象
+        local player_res_cnt_in_event = data.player_res_cnt_in_event  -- 采集的玩家属性个数
+    end)
+end 
 ```
 
 ---
@@ -4355,11 +4383,13 @@ event in Destructible
 ```lua
 local destructible = y3.destructible.get_by_id(1)
 
-destructible:event('可破坏物-受到伤害', function(trg, data)
-    local destructible = data.destructible  -- 可破坏物
-    local unit_id_of_hurt_dest = data.unit_id_of_hurt_dest  -- 事件中的单位
-    local damage_value_of_hurt_dest = data.damage_value_of_hurt_dest  -- 受到的伤害
-end)
+if destructible then
+    destructible:event('可破坏物-受到伤害', function(trg, data)
+        local destructible = data.destructible  -- 可破坏物
+        local unit_id_of_hurt_dest = data.unit_id_of_hurt_dest  -- 事件中的单位
+        local damage_value_of_hurt_dest = data.damage_value_of_hurt_dest  -- 受到的伤害
+    end)
+end 
 ```
 
 ---
@@ -4451,9 +4481,11 @@ event in Destructible
 ```lua
 local destructible = y3.destructible.get_by_id(1)
 
-destructible:event('可破坏物-移除', function(trg, data)
-    local destructible = data.destructible  -- 触发事件的可破坏物
-end)
+if destructible then
+    destructible:event('可破坏物-移除', function(trg, data)
+        local destructible = data.destructible  -- 触发事件的可破坏物
+    end)
+end 
 ```
 
 ---
@@ -4479,7 +4511,8 @@ event in Projectile
 - 示例
 
 ```lua
--- 需要先创建或获取投射物对象
+local projectile = y3.projectile.get_by_id(1)
+
 projectile:event('投射物-创建', function(trg, data)
     local projectile = data.projectile  -- 投射物
 end)
@@ -4508,7 +4541,8 @@ event in Projectile
 - 示例
 
 ```lua
--- 需要先创建或获取投射物对象
+local projectile = y3.projectile.get_by_id(1)
+
 projectile:event('投射物-死亡', function(trg, data)
     local projectile = data.projectile  -- 投射物
 end)
@@ -4644,6 +4678,8 @@ event in Game / Player
 
 ```lua
 -- 方式1: 通过 y3.game 注册（监听所有玩家）
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
+
 y3.game:event('界面-滑动条变化', ui, function(trg, data)
     local player = data.player  -- 玩家
     local ui_event_name = data.ui_event_name  -- ui事件变量名
@@ -4654,6 +4690,7 @@ end)
 
 -- 方式2: 通过 Player 对象注册（监听特定对象）
 local player = y3.player.get_by_id(1)
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
 
 player:event('界面-滑动条变化', ui, function(trg, data)
     local player = data.player  -- 玩家
@@ -4694,6 +4731,8 @@ event in Game / Player
 
 ```lua
 -- 方式1: 通过 y3.game 注册（监听所有玩家）
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
+
 y3.game:event('界面-聊天框可见性变化', ui, function(trg, data)
     local player = data.player  -- 玩家
     local ui_event_name = data.ui_event_name  -- ui事件变量名
@@ -4704,6 +4743,7 @@ end)
 
 -- 方式2: 通过 Player 对象注册（监听特定对象）
 local player = y3.player.get_by_id(1)
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
 
 player:event('界面-聊天框可见性变化', ui, function(trg, data)
     local player = data.player  -- 玩家
@@ -4747,6 +4787,8 @@ event in Game / Player
 
 ```lua
 -- 方式1: 通过 y3.game 注册（监听所有玩家）
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
+
 y3.game:event('界面-装备拖拽', ui, function(trg, data)
     local ui_event_name = data.ui_event_name  -- 事件名
     local player = data.player  -- 玩家
@@ -4760,6 +4802,7 @@ end)
 
 -- 方式2: 通过 Player 对象注册（监听特定对象）
 local player = y3.player.get_by_id(1)
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
 
 player:event('界面-装备拖拽', ui, function(trg, data)
     local ui_event_name = data.ui_event_name  -- 事件名
@@ -4803,6 +4846,8 @@ event in Game / Player
 
 ```lua
 -- 方式1: 通过 y3.game 注册（监听所有玩家）
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
+
 y3.game:event('界面-复选框变化', ui, function(trg, data)
     local player = data.player  -- 玩家
     local ui_event_name = data.ui_event_name  -- ui事件变量名
@@ -4813,6 +4858,7 @@ end)
 
 -- 方式2: 通过 Player 对象注册（监听特定对象）
 local player = y3.player.get_by_id(1)
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
 
 player:event('界面-复选框变化', ui, function(trg, data)
     local player = data.player  -- 玩家
@@ -4853,6 +4899,8 @@ event in Game / Player
 
 ```lua
 -- 方式1: 通过 y3.game 注册（监听所有玩家）
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
+
 y3.game:event('界面-视频播放完成', ui, function(trg, data)
     local player = data.player  -- 玩家
     local ui_event_name = data.ui_event_name  -- ui事件变量名
@@ -4863,6 +4911,7 @@ end)
 
 -- 方式2: 通过 Player 对象注册（监听特定对象）
 local player = y3.player.get_by_id(1)
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
 
 player:event('界面-视频播放完成', ui, function(trg, data)
     local player = data.player  -- 玩家
@@ -4902,6 +4951,8 @@ event in Game / Player
 
 ```lua
 -- 方式1: 通过 y3.game 注册（监听所有玩家）
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
+
 y3.game:event('本地-界面-输入框获取焦点', ui, function(trg, data)
     local player = data.player  -- 玩家
     local ui_event_name = data.ui_event_name  -- ui事件变量名
@@ -4911,6 +4962,7 @@ end)
 
 -- 方式2: 通过 Player 对象注册（监听特定对象）
 local player = y3.player.get_by_id(1)
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
 
 player:event('本地-界面-输入框获取焦点', ui, function(trg, data)
     local player = data.player  -- 玩家
@@ -4949,6 +5001,8 @@ event in Game / Player
 
 ```lua
 -- 方式1: 通过 y3.game 注册（监听所有玩家）
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
+
 y3.game:event('本地-界面-输入框失去焦点', ui, function(trg, data)
     local player = data.player  -- 玩家
     local ui_event_name = data.ui_event_name  -- ui事件变量名
@@ -4958,6 +5012,7 @@ end)
 
 -- 方式2: 通过 Player 对象注册（监听特定对象）
 local player = y3.player.get_by_id(1)
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
 
 player:event('本地-界面-输入框失去焦点', ui, function(trg, data)
     local player = data.player  -- 玩家
@@ -4997,6 +5052,8 @@ event in Game / Player
 
 ```lua
 -- 方式1: 通过 y3.game 注册（监听所有玩家）
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
+
 y3.game:event('本地-界面-输入框内容改变', ui, function(trg, data)
     local player = data.player  -- 玩家
     local ui_event_name = data.ui_event_name  -- ui事件变量名
@@ -5007,6 +5064,7 @@ end)
 
 -- 方式2: 通过 Player 对象注册（监听特定对象）
 local player = y3.player.get_by_id(1)
+local ui = y3.ui.get_ui(y3.player.get_by_id(1), 'ui_path')
 
 player:event('本地-界面-输入框内容改变', ui, function(trg, data)
     local player = data.player  -- 玩家
